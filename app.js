@@ -34,7 +34,18 @@ const profiles = profileIterator(data);
 document.getElementById('next').addEventListener('click', nextProfile);
 
 // Next Profile Display Function
+function nextProfile() {
+    const currentProfile = profiles.next().value;
 
+    document.getElementById('profileDisplay').innerHTML = `
+       <ul class="list-group">
+          <li class="list-group-item">Name: ${currentProfile.name}</li>
+          <li class="list-group-item">Age: ${currentProfile.age}</li>
+          <li class="list-group-item">Gender: ${currentProfile.gender}</li>
+          <li class="list-group-item">Looking For: ${currentProfile.gender}</li>
+       </ul>    
+    `;
+}
 
 
 
